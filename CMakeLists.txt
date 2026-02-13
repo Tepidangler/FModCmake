@@ -1,15 +1,6 @@
 cmake_minimum_required(VERSION 4.1)
-set(CMAKE_CXX_STANDARD 20)
 
-project(FMOD)
-
-link_directories(BEFORE
-        ${FMOD_INSTALL_PATH}/api/core/lib/x64
-        ${FMOD_INSTALL_PATH}/api/studio/lib/x64
-)
-
-
-add_library(FMOD STATIC
+set(FMOD_HDRS
         ${FMOD_INSTALL_PATH}/api/core/inc/fmod_codec.h
         ${FMOD_INSTALL_PATH}/api/core/inc/fmod_common.h
         ${FMOD_INSTALL_PATH}/api/core/inc/fmod_dsp_effects.h
@@ -23,15 +14,9 @@ add_library(FMOD STATIC
         ${FMOD_INSTALL_PATH}/api/studio/inc/fmod_studio.h
         ${FMOD_INSTALL_PATH}/api/studio/inc/fmod_studio.hpp
         ${FMOD_INSTALL_PATH}/api/studio/inc/fmod_studio_common.h
-)
-set_target_properties(FMOD PROPERTIES LINKER_LANGUAGE CXX)
+ CACHE PATH "FMOD Headers")
 
-target_link_libraries(FMOD PUBLIC
 
-        fmod_vc
-        fmod_studio
-
-)
 
 
 
