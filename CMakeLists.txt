@@ -24,6 +24,10 @@ link_directories(BEFORE
         ${FMOD_INSTALL_PATH}/api/core/lib/x64
         ${FMOD_INSTALL_PATH}/api/studio/lib/x64
 )
+
+set(FMOD_CORE "")
+set(FMOD_STUDIO "")
+
 find_library(FMOD_CORE
     fmod_vc.lib
 )
@@ -35,4 +39,5 @@ target_link_libraries(FMOD PUBLIC
         FMOD_STUDIO
 
 )
+
 
