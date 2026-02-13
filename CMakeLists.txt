@@ -19,7 +19,7 @@ add_library(FMOD STATIC
         ${FMOD_INSTALL_PATH}/api/studio/inc/fmod_studio.hpp
         ${FMOD_INSTALL_PATH}/api/studio/inc/fmod_studio_common.h
 )
-
+set_target_properties(FMOD PROPERTIES LINKER_LANGUAGE CXX)
 link_directories(BEFORE
         ${FMOD_INSTALL_PATH}/api/core/lib/x64
         ${FMOD_INSTALL_PATH}/api/studio/lib/x64
@@ -33,4 +33,6 @@ find_library(FMOD_STUDIO
 target_link_libraries(FMOD PUBLIC
         FMOD_CORE
         FMOD_STUDIO
+
 )
+
